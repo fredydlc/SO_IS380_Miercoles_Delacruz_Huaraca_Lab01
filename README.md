@@ -10,3 +10,10 @@
 ```bash
 gcc hola.c -o hola
 ./hola
+
+## 2. Programa punteros de GCC
+gcc punteros.c -o punteros
+./punteros
+## 3 Programa lab01 de gcc
+gcc lab01.c -o lab01
+./lab01

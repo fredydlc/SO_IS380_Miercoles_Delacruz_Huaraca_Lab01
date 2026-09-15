@@ -30,3 +30,16 @@ for (int i = 0; i < n; i++) {
 
     return 0;
 }
+
+
+// PARTE A: Definicion de la estructura struct Proceso
+struct Proceso {
+    int pid;
+    char nombre[20];
+    int prioridad; // 1 (alta) a 5 (baja)
+};
+
+// PARTE C: Prototipo de funcion que recibe el arreglo mediante un puntero
+int buscarMayorPrioridad(struct Proceso *procesos, int n);
+
+int main() {

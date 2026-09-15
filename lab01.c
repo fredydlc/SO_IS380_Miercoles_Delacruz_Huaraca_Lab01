@@ -17,3 +17,16 @@ int main() {
 
     return 0;
 }
+for (int i = 0; i < n; i++) {
+        printf("--- Registro del Proceso [%d/5] ---\n", i + 1);
+        printf("Ingrese PID: ");
+        scanf("%d", &procesos[i].pid);
+        printf("Ingrese Nombre del Proceso: ");
+        scanf("%s", procesos[i].nombre);
+        printf("Ingrese Prioridad (1: Alta - 5: Baja): ");
+        scanf("%d", &procesos[i].prioridad);
+        printf("\n");
+    }
+
+    return 0;
+}

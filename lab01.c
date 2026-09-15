@@ -16,7 +16,7 @@ int main() {
 
     printf("===================================================\n");
     printf("   SISTEMAS OPERATIVOS IS-380 - SIMULADOR SCHEDULER\n");
-    printf("   Estudiante: [Pon Tu Nombre Completo Aqui]\n");
+    printf("   Estudiante: Fredy de la Cruz huaraca\n");
     printf("===================================================\n\n");
 
     // PARTE B: Registro por consola de los procesos

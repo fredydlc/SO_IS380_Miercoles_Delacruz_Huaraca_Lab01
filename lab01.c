@@ -40,6 +40,13 @@ struct Proceso {
 };
 
 // PARTE C: Prototipo de funcion que recibe el arreglo mediante un puntero
-int buscarMayorPrioridad(struct Proceso *procesos, int n);
-
-int main() {
+int buscarMayorPrioridad(struct Proceso *procesos, int n) {
+    int indiceGanador = 0;
+    for (int i = 1; i < n; i++) {
+        // Acceso directo a memoria por puntero: (procesos + i)->prioridad
+        if ((procesos + i)->prioridad < (procesos + indiceGanador)->prioridad) {
+            indiceGanador = i;
+        }
+    }
+    return indiceGanador;
+}

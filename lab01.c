@@ -6,18 +6,21 @@ struct Proceso {
     char nombre[20];
     int prioridad; // 1 (alta) a 5 (baja)
 };
+
+// PARTE C: Prototipo de funcion que recibe el arreglo mediante un puntero
+int buscarMayorPrioridad(struct Proceso *procesos, int n);
+
 int main() {
     int n = 5;
     struct Proceso procesos[5];
 
     printf("===================================================\n");
     printf("   SISTEMAS OPERATIVOS IS-380 - SIMULADOR SCHEDULER\n");
-    printf("   Estudiante: Fredy de la Cruz Huaraca\n");
+    printf("   Estudiante: [Pon Tu Nombre Completo Aqui]\n");
     printf("===================================================\n\n");
 
-    return 0;
-}
-for (int i = 0; i < n; i++) {
+    // PARTE B: Registro por consola de los procesos
+    for (int i = 0; i < n; i++) {
         printf("--- Registro del Proceso [%d/5] ---\n", i + 1);
         printf("Ingrese PID: ");
         scanf("%d", &procesos[i].pid);
@@ -28,22 +31,25 @@ for (int i = 0; i < n; i++) {
         printf("\n");
     }
 
+    // Invocacion de la funcion por puntero (Parte C)
+    int idxGanador = buscarMayorPrioridad(procesos, n);
+
+    // PARTE D: Presentacion ordenada del proceso ganador
+    printf("===================================================\n");
+    printf("  PROCESO GANADOR SELECCIONADO PARA EJECUTARSE (CPU)\n");
+    printf("===================================================\n");
+    printf("  - PID       : %d\n", procesos[idxGanador].pid);
+    printf("  - Nombre    : %s\n", procesos[idxGanador].nombre);
+    printf("  - Prioridad : %d (Mayor Prioridad)\n", procesos[idxGanador].prioridad);
+    printf("===================================================\n");
+
     return 0;
 }
 
-
-// PARTE A: Definicion de la estructura struct Proceso
-struct Proceso {
-    int pid;
-    char nombre[20];
-    int prioridad; // 1 (alta) a 5 (baja)
-};
-
-// PARTE C: Prototipo de funcion que recibe el arreglo mediante un puntero
+// PARTE C: Logica de busqueda del proceso de mayor prioridad usando punteros
 int buscarMayorPrioridad(struct Proceso *procesos, int n) {
     int indiceGanador = 0;
     for (int i = 1; i < n; i++) {
-        // Acceso directo a memoria por puntero: (procesos + i)->prioridad
         if ((procesos + i)->prioridad < (procesos + indiceGanador)->prioridad) {
             indiceGanador = i;
         }
